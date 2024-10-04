@@ -1,9 +1,6 @@
-import express from "express";
-import usersRoutes from "./routes/users";
+import { createApp } from "./createApp";
 
-const app = express();
-
-app.use("/api/users", usersRoutes);
+const app = createApp();
 
 const PORT = 3000;
 
