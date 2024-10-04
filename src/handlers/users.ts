@@ -21,8 +21,8 @@ export function createUser(
   request: Request<{}, {}, CreateUserDto, CreateUserQueryParams>,
   response: Response<User>
 ) {
-  // request.sessionID = "1234"; <- extends Request from express-serve-static-core
-  //   request.login({ id: 1, username: "john_doe" }, () => {}); <- extends Request from express-serve-static-core
+  // request.sessionID = "1234"; <- extends Request from express-session
+  //   request.login({ id: 1, username: "john_doe" }, () => {}); <- extends Request from passportjs
 
   return response.status(201).send({
     id: 1,
