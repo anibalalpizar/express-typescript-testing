@@ -8,7 +8,6 @@ export function getUsers(request: Request, response: Response) {
 }
 
 export function getUserById(request: Request, response: Response) {
-  request.customField = "custom value from index.d.ts";
   response.send({});
 }
 
@@ -22,6 +21,9 @@ export function createUser(
   request: Request<{}, {}, CreateUserDto, CreateUserQueryParams>,
   response: Response<User>
 ) {
+  // request.sessionID = "1234"; <- extends Request from express-serve-static-core
+  //   request.login({ id: 1, username: "john_doe" }, () => {}); <- extends Request from express-serve-static-core
+
   return response.status(201).send({
     id: 1,
     username: "john_doe",
