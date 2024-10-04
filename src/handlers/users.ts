@@ -8,6 +8,7 @@ export function getUsers(request: Request, response: Response) {
 }
 
 export function getUserById(request: Request, response: Response) {
+  request.customField = "custom value from index.d.ts";
   response.send({});
 }
 
